@@ -1,0 +1,995 @@
+/* General Styles */
+body {
+    font-family: 'Orbitron', sans-serif; /* ฟอนต์ของเว็บไซต์ */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
+    color: #302d2a; /* สีตัวอักษร */
+    background-color: #f9f9f9; /* สีพื้นหลัง */
+    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+}
+
+/* Gradient Text */
+.gradient-text {
+    font-size: 40px; /* ขนาดหัวเรื่อง */
+    font-weight: bold;
+    background: linear-gradient(90deg, #ebe4e2, #feb47b); /* ไล่สี */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Text Shadow */
+.shadow-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000000; /* สีพื้นฐาน */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* เงา */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Glow Effect */
+.glow-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px; /* ใช้ px เพื่อให้ขนาดคงที่ */
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, s0 0 20px #009999, 0 0 30px #006666;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* Embossed Text */
+.embossed-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #555;
+    text-shadow: 1px 1px 0 #fff, -1px -1px 0 #000; /* ทำให้ดูเหมือนตัวหนังสือถูกกด */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* 3D Effect */
+.three-d-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 0px #c4c4c4, 2px 2px 0px #aaa, 3px 3px 0px #888; /* เพิ่มหลายชั้นเพื่อให้ดูเหมือนสามมิติ */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed; /* ตำแหน่งคงที่ */
+    top: 28px; /* ระยะห่างจากด้านบน */
+    right: 850px; /* ระยะห่างจากด้านขวา */
+    display: flex; /* ใช้ Flexbox */
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่างอีโมจิกับ Toggle */
+    z-index: 1000; /* ให้อยู่ด้านหน้า */
+}
+
+/* Emoji */
+#darkModeEmoji {
+    font-size: 1.5rem; /* ขนาดของอีโมจิ */
+    transition: transform 0.3s ease-in-out; /* การเปลี่ยนแปลงแบบสมูท */
+}
+
+/* Toggle Switch */
+#darkModeToggle {
+    appearance: none; /* ลบสไตล์เริ่มต้น */
+    width: 50px; /* ความกว้างของสวิตช์ */
+    height: 25px; /* ความสูงของสวิตช์ */
+    background: #ccc; /* สีพื้นหลัง */
+    border-radius: 25px; /* ทำให้เป็นวงรี */
+    position: relative; /* สำหรับใช้ในการเลื่อนปุ่ม */
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s ease-in-out; /* การเปลี่ยนสีพื้นหลังแบบสมูท */
+}
+
+/* Toggle Circle */
+#darkModeToggle::before {
+    content: "";
+    position: absolute;
+    width: 20px; /* ขนาดของวงกลม */
+    height: 20px; /* ขนาดของวงกลม */
+    background: white;
+    border-radius: 50%;
+    top: 50%; /* กึ่งกลางแนวตั้ง */
+    left: 5px; /* ตำแหน่งเริ่มต้น */
+    transform: translateY(-50%);
+    transition: left 0.3s ease-in-out; /* การเลื่อนของวงกลมแบบสมูท */
+}
+
+/* Toggle Active (Dark Mode) */
+#darkModeToggle:checked {
+    background: #333; /* สีพื้นหลังใน Dark Mode */
+}
+
+#darkModeToggle:checked::before {
+    left: 25px; /* ตำแหน่งวงกลมใน Dark Mode */
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease; /* การเปลี่ยนสีแบบสมูท */
+}
+
+
+/* Switch Container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* ความกว้างของสวิตช์ */
+    height: 30px; /* ความสูงของสวิตช์ */
+}
+
+/* Hide Default Checkbox */
+.switch input {
+    opacity: 0; /* ซ่อน Input */
+    width: 0;
+    height: 0;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* สีพื้นหลังเริ่มต้น */
+    border-radius: 30px; /* ทำให้เป็นวงรี */
+    transition: background-color 0.3s ease-in-out; /* สมูทเปลี่ยนสี */
+    overflow: hidden; /* ซ่อนอีโมจินอกขอบ */
+}
+
+/* Slider Circle */
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 24px; /* ขนาดของวงกลม */
+    height: 24px; /* ขนาดของวงกลม */
+    background: white;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease-in-out; /* การเลื่อนวงกลมแบบสมูท */
+}
+
+/* Emojis */
+.emoji {
+    position: absolute;
+    font-size: 20px; /* ขนาดอีโมจิ */
+    pointer-events: none; /* ไม่ให้คลิกที่อีโมจิ */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sun {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    opacity: 1; /* แสดงใน Light Mode */
+}
+
+.moon {
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    opacity: 0; /* ซ่อนใน Light Mode */
+}
+
+/* When Checked */
+input:checked + .slider {
+    background-color: #333; /* สีพื้นหลังใน Dark Mode */
+}
+
+input:checked + .slider::before {
+    transform: translateX(30px); /* เลื่อนวงกลมไปด้านขวา */
+}
+
+input:checked + .slider .sun {
+    opacity: 0; /* ซ่อนอีโมจิพระอาทิตย์ */
+}
+
+input:checked + .slider .moon {
+    opacity: 1; /* แสดงอีโมจิพระจันทร์ */
+}
+
+/* คอนเทนเนอร์ไอคอน */
+.social-icons {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 15px; /* ระยะห่างระหว่างไอคอน */
+    margin: 20px 0; /* ระยะห่างจากส่วนอื่น */
+}
+
+/* ไอคอน */
+.icon {
+    display: inline-block;
+    width: 50px; /* ขนาดของไอคอน */
+    height: 50px; /* ขนาดของไอคอน */
+    border-radius: 60%; /* ทำให้เป็นวงกลม */
+    background-color: #f0f0f0; /* สีพื้นหลัง */
+    text-align: center;
+    line-height: 50px; /* จัดข้อความให้อยู่ตรงกลาง */
+    color: #fff; /* สีไอคอน */
+    font-size: 1.5rem; /* ขนาดไอคอน */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* เอฟเฟกต์สมูท */
+}
+
+/* Facebook ไอคอน */
+.icon.facebook {
+    background-color: #4267B2;
+}
+
+.icon.facebook:hover {
+    background-color: #365899;
+    transform: scale(1.1); /* ขยายเมื่อโฮเวอร์ */
+}
+
+/* Twitter ไอคอน */
+.icon.twitter {
+    background-color: #1DA1F2;
+}
+
+.icon.twitter:hover {
+    background-color: #0d95e8;
+    transform: scale(1.1); /* ขยายเมื่อโฮเวอร์ */
+}
+
+/* Instagram ไอคอน */
+.icon.instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); /* ไล่สี Instagram */
+}
+
+.icon.instagram:hover {
+    background: linear-gradient(45deg, #e4405f, #bc2a8d); /* เปลี่ยนสีเมื่อโฮเวอร์ */
+    transform: scale(1.1); /* ขยายเมื่อโฮเวอร์ */
+}
+
+/* Social Icons Container */
+.social-icons-container {
+    display: flex;
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 15px; /* ระยะห่างระหว่างไอคอน */
+    margin-bottom: 40px; /* ระยะห่างจากข้อความล่าง */
+}
+
+/* Social Icon */
+.social-icon {
+    display: inline-block;
+    width: 40px; /* ความกว้างของไอคอน */
+    height: px; /* ความสูงของไอคอน */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    overflow: show; /* ซ่อนส่วนที่เกินขอบ */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* เอฟเฟกต์สมูท */
+}
+
+/* Social Icon Image */
+.social-icon img {
+    width: 100%; /* ขยายภาพให้เต็ม */
+    height: 100%; /* ขยายภาพให้เต็ม */
+    object-fit: cover; /* ให้ภาพปรับตามสัดส่วน */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+}
+
+/* Hover Effects */
+.social-icon:hover {
+    transform: scale(1.2); /* ขยายเมื่อ Hover */
+}
+
+/* Footer Text */
+.footer-text {
+    text-align: center;
+    padding: 5px;
+    background-color: hsl(0, 0%, 10%); /* สีพื้นหลังเริ่มต้น */
+    color: hsl(0, 0%, 100%); /* สีข้อความเริ่มต้น */
+    transition: background-color 0.3s ease, color 0.3s ease; /* เอฟเฟกต์เปลี่ยนสี */
+}
+
+/* Dark Mode Footer */
+body.dark-mode .footer-text {
+    background-color: hsl(137, 100%, 76%); /* สีพื้นหลังใน Dark Mode */
+    color: hsl(0, 0%, 10%); /* สีข้อความใน Dark Mode */
+}
+
+
+
+
+/* สไตล์ข้อความแจ้งเตือน */
+.notification { 
+    position: fixed; /* ตำแหน่งคงที่ */
+    bottom: 20px; /* ห่างจากด้านล่าง */
+    right: 500px; /* ห่างจากด้านขวา */
+    z-index: 9999; /* ตั้งค่าให้สูงสุดเพื่ออยู่เหนือทุกองค์ประกอบ */
+    background: #333; /* สีพื้นหลัง */
+    color: #fff; /* สีตัวอักษร */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    border-radius: 5px; /* มุมโค้ง */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    margin-bottom: 10px; /* ระยะห่างระหว่างแจ้งเตือน */
+    animation: fadeInOut 5s; /* เพิ่มแอนิเมชัน */
+}
+
+@keyframes fadeInOut { /* แอนิเมชัน fade-in และ fade-out */
+    0% { opacity: 0; transform: translateY(20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Header */
+header {
+    background:  linear-gradient(135deg,
+    #ffffff,
+    #a2ffab,
+    #7bff4f);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(109, 237, 40, 0.5); /* เงา */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 88px; /* กำหนดความสูงแบบคงที่ */
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.hidden {
+    transform: translateY(-100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5733;
+}
+
+#realTimeClock { /* สไตล์สำหรับการแสดงเวลาปัจจุบัน */
+    font-weight: bold; /* ทำให้ตัวอักษรหนา */
+    color: #000000; /* สีข้อความ */
+    margin: 1rem 0; /* เพิ่มระยะห่างจากองค์ประกอบอื่น */
+    position: fixed; /* ตำแหน่งคงที่ */
+    top: 5px; /* ห่างจากด้านล่าง */
+    right: 500px; /* ห่างจากด้านขวา */
+    padding: 10px 20px; /* ระยะห่างภายใน */
+    border-radius: 5px; /* มุมโค้ง */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* เงา */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    margin-bottom: 10px; /* ระยะห่างระหว่างแจ้งเตือน */
+    flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
+}
+
+/* ปรับ Hero Section */
+.hero {
+    background: #ffffff, /* สีขาว */ 
+    url('assets/images/hero.png') no-repeat center center;
+    background-size: cover; /* ให้รูปขยายเต็มพื้นที่ */
+    color: white;
+    display: flex; /* ใช้ Flexbox */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem; /* ระยะห่างระหว่างแต่ละบรรทัด */
+    padding: 6rem 1rem; /* เพิ่ม Padding ให้สมส่วน */
+    height: 10vh; /* เพิ่มความสูงเพื่อความสมดุล */
+    position: relative; /* ให้รองรับการวางเนื้อหา */
+    z-index: 1; /* ซ้อนพื้นหลังให้อยู่ด้านล่าง */
+    overflow: hidden;
+    animation: gradientMove 10s ease infinite; /* เอฟเฟกต์ไล่สีเคลื่อนที่ */
+    border-bottom: 4px solid #ffb115; /* เพิ่มกรอบเฉพาะด้านล่าง สีส้ม */
+    border-radius: 0 0 15px 15px; /* โค้งมนเฉพาะมุมล่าง */
+}
+
+.hero-image {
+    width: 50%; /* ลดขนาดรูปเป็น 50% ของความกว้าง */
+    height: auto; /* รักษาอัตราส่วนเดิม */
+    margin-bottom: 2rem; /* เพิ่มระยะห่างระหว่างรูปกับข้อความ */
+}
+
+/* แอนิเมชันสำหรับพื้นหลัง */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.hero h1 {
+    white-space: nowrap; /* ป้องกันการตัดข้อความ */
+    overflow: hidden; /* ซ่อนข้อความที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม ... หากข้อความเกิน */
+    padding-top: 80px; /* เพิ่มระยะห่างด้านบน */
+    font-size: 60px; /* ขยายตัวหนังสือหัวเรื่อง */
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
+    text-shadow: 0 2px 4px rgb(36, 36, 36); /* เพิ่มเงาเพื่อให้ชัด */
+}
+
+.hero h2 {
+    padding-top: 2px; /* เพิ่มระยะห่างด้านบน */
+    font-size: 30px; /* ปรับขนาดข้อความรอง */
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
+    text-shadow: 0 2px 4px rgb(0, 0, 0);
+}
+
+.cta-button {
+    margin-top: 80px; /* ระยะห่างจากข้อความด้านบน */
+    padding: 1rem 2.5rem; /* ขยายปุ่ม */
+    background: #ffffff;
+    color: #000;
+    border: none;
+    border-radius: 80px;
+    font-size: 1.5rem; /* ขยายตัวอักษรในปุ่ม */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.5s ease;
+}
+
+.cta-button:hover {
+    background: #000000;
+}
+
+.button-container {
+    margin-top: 10rem; /* เพิ่มระยะห่างจากข้อความด้านบน */
+}
+
+
+.cta-button {
+    padding: 0.75rem 2rem;
+    background: #003cff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+
+
+.gradient-text {
+    margin-bottom: 3rem; /* เพิ่มระยะห่างระหว่างข้อความและปุ่ม */
+}
+
+
+
+/* About Section */
+.about {
+    white-space: nowrap; /* ป้องกันการตัดข้อความ */
+    overflow: hidden; /* ซ่อนข้อความที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม ... หากข้อความเกิน */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Gallery Section */
+.gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* ระยะห่างระหว่างแต่ละรูป */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+    margin-top: 2rem;
+}
+
+.gallery-grid figure {
+    text-align: center;
+    width: 100%; /* ปรับขนาดรูปภาพให้เต็มความกว้างของคอนเทนเนอร์ */
+    max-width: 500px; /* จำกัดความกว้างของรูปภาพ */
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+/* ปุ่ม Scroll to Top */
+.scroll-to-top {
+    font-size: 20px; /* ขยายขนาดอีโมจิ */
+    position: fixed; /* ยึดตำแหน่งปุ่ม */
+    bottom: 30px; /* ห่างจากขอบล่าง 20px */
+    right: 30px; /* ห่างจากขอบขวา 20px */
+    background: #ff5733; /* พื้นหลังสีส้ม */
+    color: white; /* สีตัวอักษรสีขาว */
+    border: none; /* ไม่มีกรอบ */
+    width: 50px; /* ความกว้างปุ่ม */
+    height: 50px; /* ความสูงปุ่ม */
+    border-radius: 50%; /* ปุ่มทรงกลม */
+    display: none; /* ซ่อนปุ่มไว้ก่อน */
+    justify-content: center; /* จัดข้อความให้อยู่กลาง */
+    align-items: center; /* จัดข้อความให้อยู่กลาง */
+    cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+    transition: background 0.3s, transform 0.3s; /* เพิ่มเอฟเฟกต์เวลาเปลี่ยน */
+}
+
+
+/* เปลี่ยนสีปุ่มเมื่อเลื่อนเมาส์ */
+.scroll-to-top:hover {
+    background: #e14e28; /* เปลี่ยนสีพื้นหลังเป็นสีแดงเข้ม */
+    transform: scale(1.1); /* ขยายปุ่มเล็กน้อย */
+}
+
+/* ให้ปุ่มกลับไปด้านบนแสดงขึ้นมาเมื่อเลื่อน */
+body.show-scroll-to-top #scrollToTop {
+    display: flex; /* แสดงปุ่มเมื่อถึงเงื่อนไข */
+}
+
+
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.popup.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.open-popup-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.open-popup-button:hover {
+    background: #e14e28;
+}
+
+/* Contact Section */
+.contact {
+    margin: 4rem 0;
+}
+
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-layout form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-layout .social-links {
+    flex: 0.5;
+    min-width: 200px;
+    text-align: center;
+}
+
+.social-links h3 {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff5733;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+
+
+/* ส่วนของ Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px; /* ปรับขนาด Carousel */
+    margin: 0 auto; /* จัด Carousel ให้อยู่ตรงกลางหน้า */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* เลื่อนภาพอย่างนุ่มนวล */
+
+}
+
+.carousel-track figure {
+    position: relative;
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column; /* เรียงแนวตั้ง */
+    align-items: center; /* จัดให้อยู่ตรงกลาง */
+    justify-content: space-between; /* กระจายเนื้อหา */
+    text-align: center;
+    padding: 1rem; /* เพิ่ม Padding รอบรูป */
+    min-height: 500px; /* ปรับให้ความสูงของ Carousel เท่ากัน */
+    box-sizing: border-box; /* รวม Padding */
+    margin: 0;
+}
+
+.carousel-track img {
+    max-width: 30%; /* ทำให้ภาพไม่เกินขนาด Carousel */
+    height: auto;
+    margin: 0 auto; /* จัดแต่ละภาพให้อยู่ตรงกลาง */
+}
+
+.carousel-track figure {
+    flex: 0 0 100%; /* แต่ละรูปใช้พื้นที่ 100% ของ Carousel */
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+.carousel-track figcaption {
+    margin-top: 1rem; /* ระยะห่างจากรูป */
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0.5rem;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+
+
+/* Highlight */
+.highlight {
+    background-color: #ffeb3b;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+/* Form Fields */
+form .form-group {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 0.75rem 1.5rem;
+    background: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #e14e28;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* ซ่อนโดยเริ่มต้น */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* พื้นหลังโปร่งแสง */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto; /* กึ่งกลางหน้า */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* ความกว้างของ Modal */
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%; /* ขนาดรูปภาพภายใน Modal */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .modal-content {
+    background-color: #333; /* พื้นหลังใน Dark Mode */
+    color: #fff; /* ฟอนต์ใน Dark Mode */
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: grid; /* ใช้ Grid Layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* แบ่งคอลัมน์แบบยืดหยุ่น */
+    gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+    padding: 20px; /* ระยะห่างจากขอบ */
+}
+
+/* Gallery Item */
+.gallery-item img {
+    width: 100%; /* ทำให้รูปภาพเต็มพื้นที่คอลัมน์ */
+    height: auto; /* รักษาอัตราส่วน */
+    border-radius: 10px; /* เพิ่มมุมโค้ง */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* เอฟเฟกต์สมูท */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* สีพื้นหลังแบบโปร่งใส */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    max-width: 90%; /* ความกว้างสูงสุด */
+    max-height: 90%; /* ความสูงสูงสุด */
+    background: #fff; /* สีพื้นหลังของ Modal */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* รูปภาพใน Modal */
+.modal-content img {
+    max-width: 100%; /* รูปจะปรับตามความกว้าง */
+    max-height: 90vh; /* ความสูงไม่เกินหน้าจอ */
+    object-fit: contain; /* รักษาสัดส่วนของรูป */
+}
+
+/* ปุ่มปิด */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+.modal-content img {
+    width: 100%; /* ปรับรูปใน Modal ให้เต็มความกว้าง */
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .gallery-item img {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* ปรับเงาใน Dark Mode */
+}
+
+body.dark-mode .modal-content {
+    background: #222; /* พื้นหลังใน Modal เมื่อเป็น Dark Mode */
+    color: #fff; /* ฟอนต์ใน Modal */
+}
+
+body.dark-mode .close-btn {
+    color: #fff; /* สีปุ่มปิดใน Dark Mode */
+}
+
