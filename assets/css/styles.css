@@ -412,7 +412,7 @@ header.hidden {
     text-align: center;
     gap: 1rem; /* ระยะห่างระหว่างแต่ละบรรทัด */
     padding: 6rem 1rem; /* เพิ่ม Padding ให้สมส่วน */
-    height: 10vh; /* เพิ่มความสูงเพื่อความสมดุล */
+    height: 20vh; /* เพิ่มความสูงเพื่อความสมดุล */
     position: relative; /* ให้รองรับการวางเนื้อหา */
     z-index: 1; /* ซ้อนพื้นหลังให้อยู่ด้านล่าง */
     overflow: hidden;
