@@ -226,47 +226,52 @@
     </section>
 
     <!-- Gallery Section -->
-<section id="gallery" class="gallery fade-in">
-    <div class="container">
-        <div class="carousel">
-            <div class="carousel-track">
-                <figure>
-                    <a href="gallery1.html"> <!-- เพิ่มลิงก์ -->
-                        <img src="assets/images/gallery/gallery1.png" alt="Gallery 1">
-                    </a>
-                    <figcaption>Image 1 - Upper Water Tank</figcaption>
-                </figure>
-                <figure>
-                    <a href="gallery2.html"> <!-- เพิ่มลิงก์ -->
-                        <img src="assets/images/gallery/gallery2.png" alt="Gallery 2">
-                    </a>
-                    <figcaption>Image 2 - Lower Water Tank</figcaption>
-                </figure>
-                <figure>
-                    <a href="gallery3.html"> <!-- เพิ่มลิงก์ -->
-                        <img src="assets/images/gallery/gallery3.png" alt="Gallery 3">
-                    </a>
-                    <figcaption>Image 3 - Underneath Machine</figcaption>
-                </figure>
-                <figure>
-                    <a href="gallery4.html"> <!-- เพิ่มลิงก์ -->
-                        <img src="assets/images/gallery/gallery4.png" alt="Gallery 4">
-                    </a>
-                    <figcaption>Image 4 - Control Panel</figcaption>
-                </figure>
-                <figure>
-                    <a href="gallery5.html"> <!-- เพิ่มลิงก์ -->
-                        <img src="assets/images/gallery/gallery5.png" alt="Gallery 5">
-                    </a>
-                    <figcaption>Image 5 - Overview of Water Tank</figcaption>
-                </figure>
+    <section id="gallery" class="gallery fade-in">
+        <div class="container">
+            <div class="carousel">
+                <!-- ปุ่มเลื่อนซ้าย -->
+                <button class="carousel-button prev" onclick="scrollCarousel(-1)">⟨</button>
+                
+                <!-- แทร็ก Carousel -->
+                <div class="carousel-track">
+                    <figure>
+                        <a href="gallery1.html" onclick="navigateToPage(event, 'gallery1.html')">
+                            <img src="assets/images/gallery/gallery1.png" alt="Gallery 1">
+                        </a>
+                        <figcaption>Image 1 - Upper Water Tank</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="gallery2.html" onclick="navigateToPage(event, 'gallery2.html')">
+                            <img src="assets/images/gallery/gallery2.png" alt="Gallery 2">
+                        </a>
+                        <figcaption>Image 2 - Lower Water Tank</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="gallery3.html" onclick="navigateToPage(event, 'gallery3.html')">
+                            <img src="assets/images/gallery/gallery3.png" alt="Gallery 3">
+                        </a>
+                        <figcaption>Image 3 - Underneath Machine</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="gallery4.html" onclick="navigateToPage(event, 'gallery4.html')">
+                            <img src="assets/images/gallery/gallery4.png" alt="Gallery 4">
+                        </a>
+                        <figcaption>Image 4 - Control Panel</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="gallery5.html" onclick="navigateToPage(event, 'gallery5.html')">
+                            <img src="assets/images/gallery/gallery5.png" alt="Gallery 5">
+                        </a>
+                        <figcaption>Image 5 - Overview of Water Tank</figcaption>
+                    </figure>
+                </div>
+                
+                <!-- ปุ่มเลื่อนขวา -->
+                <button class="carousel-button next" onclick="scrollCarousel(1)">⟩</button>
             </div>
-            <!-- เพิ่มปุ่มเลื่อนซ้าย-ขวา -->
-            <button class="carousel-button prev" onclick="scrollCarousel(-1)">⟨</button>
-            <button class="carousel-button next" onclick="scrollCarousel(1)">⟩</button>
         </div>
-    </div>
-</section>
+    </section>
+    
 
         <div class="caption-text" id="captionText">
             <h2>ꚰ Projects  ➡︎</h2>
@@ -306,23 +311,37 @@
 </head>
 <body>
     <!-- Gallery Section -->
-<div class="gallery-container">
-    <div class="gallery-item">
-        <img src="assets/images/page/gallery11.png" alt="Gallery 1" onclick="openModal('assets/images/page/gallery11.png', 'Details about Gallery 1')">
+    <section id="gallery-preview" class="gallery fade-in">
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="assets/images/page/gallery11.png" alt="Gallery 11" onclick="openModal('assets/images/page/gallery11.png', 'Details about Gallery 1')">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/images/page/gallery22.png" alt="Gallery 22" onclick="openModal('assets/images/page/gallery22.png', 'Details about Gallery 2')">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/images/page/gallery33.png" alt="Gallery 33" onclick="openModal('assets/images/page/gallery33.png', 'Details about Gallery 3')">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/images/page/gallery44.png" alt="Gallery 44" onclick="openModal('assets/images/page/gallery44.png', 'Details about Gallery 4')">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/images/page/gallery55.png" alt="Gallery 55" onclick="openModal('assets/images/page/gallery55.png', 'Details about Gallery 5')">
+        </div>
     </div>
-    <div class="gallery-item">
-        <img src="assets/images/page/gallery22.png" alt="Gallery 2" onclick="openModal('assets/images/page/gallery22.png', 'Details about Gallery 2')">
-    </div>
-    <div class="gallery-item">
-        <img src="assets/images/page/gallery33.png" alt="Gallery 3" onclick="openModal('assets/images/page/gallery33.png', 'Details about Gallery 3')">
-    </div>
-    <div class="gallery-item">
-        <img src="assets/images/page/gallery44.png" alt="Gallery 4" onclick="openModal('assets/images/page/gallery44.png', 'Details about Gallery 4')">
-    </div>
-    <div class="gallery-item">
-        <img src="assets/images/page/gallery55.png" alt="Gallery 5" onclick="openModal('assets/images/page/gallery55.png', 'Details about Gallery 5')">
-    </div>
-</div>
+</section>
+
+    
+        <!-- Modal -->
+        <div id="galleryModal" class="modal" onclick="closeModal(event)">
+            <span class="close" onclick="closeModal(event)">&times;</span>
+            <div class="modal-content-wrapper">
+                <img class="modal-content" id="modalImage" alt="Modal Image">
+                <div id="modalCaption" class="modal-caption"></div>
+            </div>
+        </div>
+    </section>
+    
 
 <!-- Modal -->
 <div id="galleryModal" class="modal">
