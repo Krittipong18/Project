@@ -719,7 +719,7 @@ body.show-scroll-to-top #scrollToTop {
 .carousel {
     position: relative;
     overflow: hidden;
-    max-width: 800px; /* ปรับขนาด Carousel */
+    max-width: 600px; /* ปรับขนาด Carousel */
     margin: 0 auto; /* จัด Carousel ให้อยู่ตรงกลางหน้า */
 }
 
@@ -744,7 +744,7 @@ body.show-scroll-to-top #scrollToTop {
 }
 
 .carousel-track img {
-    max-width: 30%; /* ทำให้ภาพไม่เกินขนาด Carousel */
+    max-width: 10%; /* ทำให้ภาพไม่เกินขนาด Carousel */
     height: auto;
     margin: 0 auto; /* จัดแต่ละภาพให้อยู่ตรงกลาง */
 }
@@ -759,9 +759,9 @@ body.show-scroll-to-top #scrollToTop {
 }
 
 .carousel-track figcaption {
-    margin-top: 1rem; /* ระยะห่างจากรูป */
-    font-size: 1.2rem;
-    color: #333;
+    margin-top: 10px; /* ระยะห่างจากรูป */
+    font-size: 1.5rem;
+    color: #505050;
     text-align: center;
     flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
 }
@@ -775,8 +775,36 @@ body.show-scroll-to-top #scrollToTop {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    z-index: 10;
     padding: 0.5rem;
+}
+
+.caption-text {
+    position: relative; /* หรือ absolute หากต้องการอิสระมากขึ้น */
+    margin-top: 20px; /* เลื่อนลงจากตำแหน่งปัจจุบัน */
+    margin-left: 200px; /* เลื่อนไปทางขวาจากตำแหน่งปัจจุบัน */
+    text-align: left; /* จัดข้อความให้อยู่กึ่งกลางในตัวเอง */
+    flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
+}
+
+
+/* Carousel Track */
+
+.carousel-track figure {
+    flex: 0 0 100%; /* รูปแต่ละรูปใช้พื้นที่ 100% */
+    text-align: center;
+}
+
+.carousel-track img {
+    max-height: 300px; /* จำกัดความสูง */
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* จัดการการย่อขนาดรูปภาพให้สมส่วน */
+}
+
+
+.carousel-track img:hover {
+    transform: scale(1.05); /* ขยายรูปเมื่อ Hover */
 }
 
 .carousel-button.prev {
@@ -786,7 +814,6 @@ body.show-scroll-to-top #scrollToTop {
 .carousel-button.next {
     right: 10px;
 }
-
 
 
 /* Highlight */
@@ -997,4 +1024,10 @@ body.dark-mode .modal-content {
 body.dark-mode .close-btn {
     color: #fff; /* สีปุ่มปิดใน Dark Mode */
 }
+
+
+
+
+
+
 
