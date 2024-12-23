@@ -1,3 +1,28 @@
+/* สำหรับหน้าจอขนาดเล็ก (Mobile) */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        padding: 10px;
+    }
+}
+
+/* สำหรับหน้าจอขนาดกลาง (Tablet/iPad) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 20px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* General Styles */
 body {
     font-family: 'Orbitron', sans-serif; /* ฟอนต์ของเว็บไซต์ */
