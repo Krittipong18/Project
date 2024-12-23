@@ -989,6 +989,10 @@ body.dark-mode .modal-content {
     color: #fff; /* ฟอนต์ใน Modal */
 }
 
+body.dark-mode .close-btn {
+    color: #fff; /* สีปุ่มปิดใน Dark Mode */
+}
+
 /* ไฟล์ style.css */
 body {
     font-size: 18px; /* ค่าเริ่มต้น */
@@ -1006,11 +1010,6 @@ body {
     body {
         font-size: 16px;
     }
-}
-
-
-body.dark-mode .close-btn {
-    color: #fff; /* สีปุ่มปิดใน Dark Mode */
 }
 
 img {
