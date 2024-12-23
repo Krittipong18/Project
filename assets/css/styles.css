@@ -1,3 +1,22 @@
+/* สำหรับหน้าจอขนาดใหญ่ (Desktop) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 0 2rem; /* เพิ่ม Padding สำหรับ Desktop */
+    }
+
+    .hero {
+        height: 60vh; /* เพิ่มความสูง Hero Section สำหรับ Desktop */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* แสดง 3 คอลัมน์ */
+    }
+}
+
 /* General Styles */
 body {
     font-family: 'Orbitron', sans-serif; /* ฟอนต์ของเว็บไซต์ */
@@ -464,6 +483,30 @@ header.hidden {
     text-shadow: 0 2px 4px rgb(0, 0, 0);
 }
 
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3rem; /* ขยายขนาดข้อความบน Tablet */
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero {
+        height: 70vh; /* เพิ่มความสูง */
+    }
+
+    .hero h1 {
+        font-size: 4rem; /* ขยายขนาดข้อความบน Desktop */
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
 .cta-button {
     margin-top: 80px; /* ระยะห่างจากข้อความด้านบน */
     padding: 1rem 2.5rem; /* ขยายปุ่ม */
@@ -613,6 +656,19 @@ body.show-scroll-to-top #scrollToTop {
     display: flex; /* แสดงปุ่มเมื่อถึงเงื่อนไข */
 }
 
+.scroll-to-top {
+    font-size: 1.5rem; /* ลดขนาดปุ่มบน Mobile */
+    bottom: 20px;
+    right: 20px;
+}
+
+@media (min-width: 768px) {
+    .scroll-to-top {
+        font-size: 2rem; /* ขยายขนาดปุ่มบน Tablet */
+        bottom: 30px;
+        right: 30px;
+    }
+}
 
 /* Popup */
 .popup {
@@ -993,26 +1049,58 @@ body.dark-mode .close-btn {
     color: #fff; /* สีปุ่มปิดใน Dark Mode */
 }
 
-/* ไฟล์ style.css */
+/* Global Styles */
 body {
-    font-size: 18px; /* ค่าเริ่มต้น */
+    font-size: 16px;
 }
 
-/* ปรับสำหรับ Mobile */
+/* Media Queries */
 @media (max-width: 600px) {
     body {
         font-size: 14px;
     }
 }
 
-/* ปรับสำหรับ Tablet/iPad */
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
         font-size: 16px;
     }
 }
 
-img {
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+}
+
     max-width: 100%; /* รูปภาพปรับขนาดอัตโนมัติตาม Container */
     height: auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ใช้ auto-fit */
+    gap: 1rem;
+    padding: 1rem;
+}
+
+:root {
+    --primary-color: #ff5733;
+    --secondary-color: #333;
+    --background-color: #f9f9f9;
+    --text-color: #302d2a;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.cta-button:hover {
+    background: darken(var(--primary-color), 10%);
 }
