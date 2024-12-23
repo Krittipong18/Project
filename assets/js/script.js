@@ -192,3 +192,26 @@ document.querySelectorAll('.gallery img').forEach((img) => {
         openModal(img.src); // ใช้ src ของรูปที่คลิก
     });
 });
+
+// JavaScript สำหรับเลื่อน Carousel
+let currentIndex = 0;
+
+function scrollCarousel(direction) {
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-track figure');
+    const itemWidth = items[0].getBoundingClientRect().width;
+
+    // คำนวณตำแหน่งใหม่
+    currentIndex += direction;
+
+    // ตรวจสอบขอบเขต (เริ่มต้น และสิ้นสุด)
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+    } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+    }
+
+    // เลื่อน Carousel
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+}
+
