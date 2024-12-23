@@ -79,7 +79,6 @@ body {
     margin-bottom: 1rem;
 }
 
-
 /* Theme Toggle */
 .theme-toggle {
     position: fixed; /* ตำแหน่งคงที่ */
@@ -139,7 +138,6 @@ body.dark-mode {
     color: #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease; /* การเปลี่ยนสีแบบสมูท */
 }
-
 
 /* Switch Container */
 .switch {
@@ -320,9 +318,6 @@ body.dark-mode .footer-text {
     color: hsl(0, 0%, 10%); /* สีข้อความใน Dark Mode */
 }
 
-
-
-
 /* สไตล์ข้อความแจ้งเตือน */
 .notification { 
     position: fixed; /* ตำแหน่งคงที่ */
@@ -441,7 +436,7 @@ header.hidden {
 }
 
 .hero-image {
-    width: 50%; /* ลดขนาดรูปเป็น 50% ของความกว้าง */
+    width: 30%; /* ลดขนาดรูปเป็น 50% ของความกว้าง */
     height: auto; /* รักษาอัตราส่วนเดิม */
     margin-bottom: 2rem; /* เพิ่มระยะห่างระหว่างรูปกับข้อความ */
 }
