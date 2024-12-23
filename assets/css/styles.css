@@ -23,6 +23,22 @@ img {
     height: auto;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1 1 100%; /* เต็มหน้าจอใน Mobile */
+}
+
+@media (min-width: 768px) {
+    .item {
+        flex: 1 1 50%; /* แบ่งครึ่งหน้าจอใน Tablet */
+    }
+}
+
+
 /* General Styles */
 body {
     font-family: 'Orbitron', sans-serif; /* ฟอนต์ของเว็บไซต์ */
