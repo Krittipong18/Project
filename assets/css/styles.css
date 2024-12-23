@@ -260,30 +260,25 @@ input:checked + .slider .moon {
     transform: scale(1.1); /* ขยายเมื่อโฮเวอร์ */
 }
 
-/* Social Icons Container */
+/* ปรับให้ไอคอนสมส่วน */
 .social-icons-container {
     display: flex;
-    justify-content: center; /* จัดให้อยู่ตรงกลาง */
-    gap: 15px; /* ระยะห่างระหว่างไอคอน */
-    margin-bottom: 40px; /* ระยะห่างจากข้อความล่าง */
+    justify-content: center; /* จัดให้อยู่กลาง */
+    gap: 20px; /* ระยะห่างระหว่างไอคอน */
+    margin: 20px 0; /* ระยะห่างด้านบนและล่าง */
 }
 
-/* Social Icon */
-.social-icon {
-    display: inline-block;
-    width: 40px; /* ความกว้างของไอคอน */
-    height: px; /* ความสูงของไอคอน */
-    border-radius: 50%; /* ทำให้เป็นวงกลม */
-    overflow: show; /* ซ่อนส่วนที่เกินขอบ */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* เอฟเฟกต์สมูท */
-}
-
-/* Social Icon Image */
 .social-icon img {
-    width: 100%; /* ขยายภาพให้เต็ม */
-    height: 100%; /* ขยายภาพให้เต็ม */
-    object-fit: cover; /* ให้ภาพปรับตามสัดส่วน */
+    width: 50px; /* ความกว้างไอคอน */
+    height: 50px; /* ความสูงไอคอน */
+    object-fit: contain; /* รักษาสัดส่วนของรูป */
     border-radius: 50%; /* ทำให้เป็นวงกลม */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* ขยายเมื่อ Hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ Hover */
 }
 
 /* Hover Effects */
