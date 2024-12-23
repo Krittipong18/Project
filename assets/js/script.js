@@ -157,41 +157,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ฟังก์ชันเปิด Modal
-function openModal(imageSrc) {
-    // สร้างโครงสร้าง Modal
-    const modal = document.createElement('div');
-    modal.classList.add('modal-overlay');
-    modal.innerHTML = `
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">×</button>
-            <img src="${imageSrc}" alt="Gallery Image">
-        </div>
-    `;
-    document.body.appendChild(modal);
+function navigateOrOpenModal(event, targetUrl) {
+    // ปิดการทำงานเริ่มต้นของ <a> tag
+    event.preventDefault();
 
-    // เพิ่ม Event Listener สำหรับคลิกที่พื้นที่ว่าง
-    modal.addEventListener('click', (event) => {
-        if (event.target === modal) { // เช็คว่าคลิกที่ Overlay ไม่ใช่เนื้อหาใน Modal
-            closeModal();
-        }
-    });
-}
+    // เลือกทำงาน: หากต้องการแสดง Modal หรือไปหน้าใหม่
+    const isModalView = event.target.tagName === "IMG";
 
-// ฟังก์ชันปิด Modal
-function closeModal() {
-    const modal = document.querySelector('.modal-overlay');
-    if (modal) {
-        modal.remove();
+    if (isModalView) {
+        // เปิด Modal
+        openModal(event.target.src, event.target.alt);
+    } else {
+        // เปลี่ยนหน้าไป URL ที่กำหนด
+        window.location.href = targetUrl;
     }
 }
 
-// เพิ่ม Event Listener ให้แต่ละรูปในแกลเลอรี
-document.querySelectorAll('.gallery img').forEach((img) => {
-    img.addEventListener('click', () => {
-        openModal(img.src); // ใช้ src ของรูปที่คลิก
-    });
-});
+// ฟังก์ชันเปิด Modal
+function openModal(imageSrc, captionText) {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    modal.style.display = 'flex'; // แสดง Modal
+    modalImage.src = imageSrc;   // ใส่รูปภาพใน Modal
+    modalCaption.innerText = captionText; // ใส่คำอธิบายใน Modal
+}
+
+// ฟังก์ชันปิด Modal
+function closeModal(event) {
+    const modal = document.getElementById('galleryModal');
+    if (
+        event.target.id === 'galleryModal' || 
+        event.target.classList.contains('close')
+    ) {
+        modal.style.display = 'none'; // ซ่อน Modal
+    }
+}
+
 
 // JavaScript สำหรับเลื่อน Carousel
 let currentIndex = 0;
