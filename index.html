@@ -10,7 +10,67 @@
                 margin: 0;
                 padding: 0;
             }
-        </style>
+        </style>  
+        <head>
+            <style>
+                /* Media Queries สำหรับ Responsive Design */
+                @media (min-width: 1024px) {
+                    main {
+                        padding: 2rem;
+                        flex-direction: row;
+                        gap: 2rem;
+                    }
+        
+                    .equipment-list,
+                    .equipment-details {
+                        flex: 1;
+                    }
+                }
+        
+                @media (max-width: 1024px) and (min-width: 768px) {
+                    main {
+                        flex-direction: column;
+                        padding: 1.5rem;
+                    }
+        
+                    .equipment-list,
+                    .equipment-details {
+                        flex: 1;
+                        margin: 1rem 0;
+                    }
+                }
+        
+                @media (max-width: 768px) {
+                    header h1 {
+                        font-size: 1.5rem; /* ลดขนาดหัวข้อ */
+                    }
+        
+                    main {
+                        padding: 1rem;
+                        text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+                    }
+        
+                    img {
+                        width: 100%; /* ปรับขนาดรูปภาพให้เต็มหน้าจอ */
+                        max-width: 100%;
+                    }
+        
+                    .equipment-list,
+                    .equipment-details {
+                        width: 100%;
+                        margin: 1rem 0;
+                        padding: 1rem;
+                        text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+                    }
+        
+                    .back-link {
+                        padding: 0.5rem 1rem; /* ลดขนาดปุ่ม */
+                        font-size: 0.9rem;
+                    }
+                }
+            </style>
+        </head>
+          
     </head>
     
     <meta charset="UTF-8">
@@ -375,3 +435,4 @@
         <p>&copy; 2024 Website by Krittipong Kruanachid</p>
     </div>
 </footer>
+
