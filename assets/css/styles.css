@@ -296,6 +296,23 @@ input:checked + .slider .moon {
     transition: background-color 0.3s ease, color 0.3s ease; /* เอฟเฟกต์เปลี่ยนสี */
 }
 
+/* Media Query สำหรับมือถือ */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 0.8rem; /* ลดขนาดข้อความลงอีก */
+    }
+
+    .social-icons-container {
+        flex-direction: column; /* เรียงไอคอนแนวตั้ง */
+        gap: 10px; /* เพิ่มระยะห่าง */
+    }
+
+    .social-icon img {
+        width: 40px; /* ลดขนาดไอคอน */
+        height: 40px; /* ลดขนาดไอคอน */
+    }
+}
+
 /* Dark Mode Footer */
 body.dark-mode .footer-text {
     background-color: hsl(137, 100%, 76%); /* สีพื้นหลังใน Dark Mode */
@@ -344,6 +361,25 @@ header {
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query สำหรับหน้าจอเล็ก */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* เปลี่ยนเป็นเรียงแนวตั้ง */
+        height: auto; /* ให้ปรับความสูงอัตโนมัติ */
+        padding: 1rem; /* เพิ่ม Padding */
+    }
+
+    .nav-links {
+        flex-direction: column; /* เปลี่ยนเมนูจากแนวนอนเป็นแนวตั้ง */
+        align-items: center; /* จัดให้อยู่ตรงกลาง */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* ลดขนาดฟอนต์ */
+        padding: 0.5rem; /* เพิ่มระยะห่างระหว่างเมนู */
+    }
 }
 
 header.hidden {
@@ -426,6 +462,26 @@ header.hidden {
     width: 50%; /* ลดขนาดรูปเป็น 50% ของความกว้าง */
     height: auto; /* รักษาอัตราส่วนเดิม */
     margin-bottom: 2rem; /* เพิ่มระยะห่างระหว่างรูปกับข้อความ */
+}
+
+/* Media Query สำหรับมือถือ */
+@media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem; /* ลด Padding */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* ลดขนาดข้อความ */
+    }
+
+    .hero h2 {
+        font-size: 1.2rem; /* ลดขนาดข้อความรอง */
+    }
+
+    .cta-button {
+        font-size: 1rem; /* ลดขนาดตัวอักษรในปุ่ม */
+        padding: 0.5rem 1rem; /* ลดขนาดปุ่ม */
+    }
 }
 
 /* แอนิเมชันสำหรับพื้นหลัง */
@@ -529,6 +585,30 @@ header.hidden {
     border-radius: 10px;
 }
 
+.about {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+/* Media Query สำหรับมือถือ */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* เปลี่ยนเป็นเรียงแนวตั้ง */
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+
+    .about-text h2 {
+        font-size: 1.5rem; /* ลดขนาดหัวข้อ */
+    }
+
+    .about-image img {
+        max-width: 100%; /* ทำให้รูปภาพเต็มความกว้าง */
+    }
+}
+
+
 /* Gallery */
 .gallery-grid {
     display: grid;
@@ -547,6 +627,17 @@ header.hidden {
     transform: scale(1.05);
 }
 
+/* Media Query สำหรับมือถือ */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* เปลี่ยนเป็นแถวเดียว */
+    }
+
+    .gallery-grid img {
+        max-width: 100%; /* รูปภาพเต็มความกว้าง */
+        border-radius: 10px; /* เพิ่มมุมโค้ง */
+    }
+}
 
 /* Gallery Section */
 .gallery-grid {
@@ -782,6 +873,21 @@ body.show-scroll-to-top #scrollToTop {
     flex-shrink: 0; /* บังคับให้ข้อความไม่ถูกย่อ */
 }
 
+/* Media Query สำหรับมือถือ */
+@media (max-width: 768px) {
+    .carousel {
+        padding: 1rem; /* เพิ่ม Padding */
+    }
+
+    .carousel-track img {
+        max-width: 100%; /* ปรับขนาดรูปภาพให้เต็มความกว้าง */
+        height: auto; /* รักษาสัดส่วน */
+    }
+
+    .carousel-button {
+        font-size: 1.5rem; /* ลดขนาดปุ่มเลื่อน */
+    }
+}
 
 /* Carousel Track */
 
