@@ -281,6 +281,7 @@ input:checked + .slider .moon {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ Hover */
 }
 
+
 /* Hover Effects */
 .social-icon:hover {
     transform: scale(1.2); /* ขยายเมื่อ Hover */
@@ -1054,6 +1055,108 @@ body.dark-mode .close-btn {
     color: #fff; /* สีปุ่มปิดใน Dark Mode */
 }
 
+/* สำหรับหน้าจอ Desktop (กว้างกว่า 1024px) */
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+        flex-direction: column; /* เรียงแนวตั้งเป็นค่าเริ่มต้น */
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+        gap: 2rem; /* เพิ่มระยะห่างระหว่างส่วน */
+    }
+
+    img {
+        width: 100%; /* ทำให้รูปภาพเต็มความกว้าง */
+        height: auto; /* รักษาอัตราส่วน */
+        border-radius: 10px; /* มุมโค้ง */
+        max-width: 500px; /* จำกัดขนาดรูปภาพ */
+    }
+    
+    .back-link {
+        font-size: 1rem; /* ขนาดเริ่มต้น */
+        padding: 0.75rem 1.5rem; /* ขนาดปุ่มเริ่มต้น */
+        text-align: center;
+        margin: 1rem auto;
+    }
+    
+    header h1 {
+        font-size: 2rem; /* ลดขนาดหัวข้อ */
+        margin: 1rem 0;
+    }
+    
+    .equipment-list h2,
+    .equipment-details h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .equipment-list li,
+    .equipment-details p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap; /* ให้รองรับการเลื่อนเมื่อหน้าจอเล็กลง */
+        justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+        gap: 2rem;
+    }
+    
+
+    .equipment-list,
+    .equipment-details {
+        flex: 1;
+    }
+}
+
+/* สำหรับหน้าจอ Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .equipment-list,
+    .equipment-details {
+        flex: 1;
+        margin: 1rem 0;
+    }
+
+    
+}
+
+/* สำหรับหน้าจอ Mobile (ต่ำกว่า 768px) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* ลดขนาดหัวข้อ */
+    }
+
+    main {
+        padding: 1rem;
+        text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    }
+
+    img {
+        width: 100%; /* ปรับขนาดรูปภาพให้เต็มหน้าจอ */
+        max-width: 100%;
+    }
+
+    .equipment-list,
+    .equipment-details {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem;
+        text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    }
+
+    .back-link {
+        padding: 0.5rem 1rem; /* ลดขนาดปุ่ม */
+        font-size: 0.9rem;
+    }
+}
 
 
 
