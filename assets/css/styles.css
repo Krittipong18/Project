@@ -911,10 +911,12 @@ body.show-scroll-to-top #scrollToTop {
 
 .carousel-button.prev {
     left: 10px;
+        z-index: 9999; /* ตั้งค่าให้สูงสุดเพื่ออยู่เหนือทุกองค์ประกอบ */
 }
 
 .carousel-button.next {
     right: 10px;
+        z-index: 9999; /* ตั้งค่าให้สูงสุดเพื่ออยู่เหนือทุกองค์ประกอบ */
 }
 
 
